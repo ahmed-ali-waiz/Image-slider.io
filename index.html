@@ -3,73 +3,251 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Image Slider</title>
-    <style>
-        
-        *{
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        body{
-            background-color: #D2D2D2;
-            background-image:
-            repeating-linear-gradient(
-                to right, transparent 0 100px,
-                #25283b22 100px 101px
-            ),
-            repeating-linear-gradient(
-                to bottom, transparent 0 100px,
-                #25283b22 100px 101px
-            );
-        }
-        
-        body::before{
-            position: absolute;
-            width: min(1400px, 90vw);
-            top: 10%;
-            left: 50%;
-            height: 90%;
-            transform: translateX(-50%);
-            content: '';
-            background-image: url(images/bg.png);
-            background-size: 100%;
-            background-repeat: no-repeat;
-            background-position: top center;
-            pointer-events: none;
-        }
-    </style>
-    <link rel="stylesheet" href="style.css">
+    <title>MANGA Plus by SHUEISHA</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 </head>
 <body>
-
-    <div class="banner">
-        <div class="slider" style="--quantity: 10">
-            <div class="item" style="--position: 1"><img src="images/dragon_1.jpg" alt=""></div>
-            <div class="item" style="--position: 2"><img src="images/dragon_2.jpg" alt=""></div>
-            <div class="item" style="--position: 3"><img src="images/dragon_3.jpg" alt=""></div>
-            <div class="item" style="--position: 4"><img src="images/dragon_4.jpg" alt=""></div>
-            <div class="item" style="--position: 5"><img src="images/dragon_5.jpg" alt=""></div>
-            <div class="item" style="--position: 6"><img src="images/dragon_6.jpg" alt=""></div>
-            <div class="item" style="--position: 7"><img src="images/dragon_7.jpg" alt=""></div>
-            <div class="item" style="--position: 8"><img src="images/dragon_8.jpg" alt=""></div>
-            <div class="item" style="--position: 9"><img src="images/dragon_9.jpg" alt=""></div>
-            <div class="item" style="--position: 10"><img src="images/dragon_10.jpg" alt=""></div>
-        </div>
-        <div class="content">
-            <h1 data-content="CSS ONLY">
-                CSS ONLY
-            </h1>
-            <div class="author">
-                <h2>Dragon img Slider</h2>
-                <p><b>Web Design</b></p>
-                <p>
-                Just using css only 
-                </p>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <!-- Logo -->
+                <div class="logo">
+                    <img src="https://mangaplus.shueisha.co.jp/static/img/sp_logo.png" alt="MANGA Plus" class="logo-img">
+                </div>
+                
+                <!-- Navigation -->
+                <nav class="nav">
+                    <ul class="nav-list">
+                        <li class="nav-item"><a href="#updates" class="nav-link active">UPDATES</a></li>
+                        <li class="nav-item"><a href="#featured" class="nav-link">FEATURED</a></li>
+                        <li class="nav-item"><a href="#ranking" class="nav-link">RANKING</a></li>
+                        <li class="nav-item"><a href="#manga-list" class="nav-link">MANGA LIST</a></li>
+                        <li class="nav-item"><a href="#creators" class="nav-link">CREATORS</a></li>
+                        <li class="nav-item"><a href="#favorited" class="nav-link">FAVORITED</a></li>
+                        <li class="nav-item"><a href="#about" class="nav-link">ABOUT US</a></li>
+                    </ul>
+                </nav>
+                
+                <!-- Search and Language -->
+                <div class="header-right">
+                    <div class="search-container">
+                        <input type="text" placeholder="Search by title or author" class="search-input">
+                        <button class="search-btn">🔍</button>
+                    </div>
+                    <div class="language-selector">
+                        <span class="language-label">LANGUAGE:</span>
+                        <select class="language-select">
+                            <option value="en">English</option>
+                            <option value="es">Español</option>
+                            <option value="th">ไทย</option>
+                        </select>
+                    </div>
+                </div>
             </div>
-            <div class="model"></div>
         </div>
-    </div>
-    
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-slider">
+                <!-- Slide 1 -->
+                <div class="hero-slide active">
+                    <div class="hero-content">
+                        <div class="hero-text">
+                            <div class="hero-logo">
+                                <img src="https://mangaplus.shueisha.co.jp/static/img/sp_logo.png" alt="MANGA Plus">
+                                <span class="hero-subtitle">by SHUEISHA</span>
+                            </div>
+                            <h1 class="hero-title">2025 Mid-Year Manga Review</h1>
+                        </div>
+                        <div class="hero-image">
+                            <div class="hero-bg red-bg"></div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Slide 2 -->
+                <div class="hero-slide">
+                    <div class="hero-content">
+                        <div class="hero-text">
+                            <h1 class="hero-title">To celebrate 40 years since the series began...</h1>
+                            <div class="hero-live-badge">LIVE!</div>
+                        </div>
+                        <div class="hero-image">
+                            <div class="hero-bg orange-bg">
+                                <div class="hero-character">
+                                    <!-- Dragon Ball character silhouette -->
+                                    <div class="character-goku"></div>
+                                </div>
+                                <div class="hero-anniversary">40</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Hero Navigation Dots -->
+            <div class="hero-dots">
+                <button class="hero-dot active" data-slide="0"></button>
+                <button class="hero-dot" data-slide="1"></button>
+                <button class="hero-dot" data-slide="2"></button>
+                <button class="hero-dot" data-slide="3"></button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Updates Section -->
+    <section class="updates" id="updates">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Latest Updates</h2>
+                <div class="section-filters">
+                    <button class="filter-btn active">All</button>
+                    <button class="filter-btn">Weekly Shonen Jump</button>
+                    <button class="filter-btn">Jump+</button>
+                    <button class="filter-btn">Other</button>
+                </div>
+            </div>
+            
+            <div class="manga-grid">
+                <!-- Manga Item 1 -->
+                <div class="manga-item">
+                    <div class="manga-cover">
+                        <img src="https://via.placeholder.com/200x280/ff6b35/ffffff?text=ONE+PIECE" alt="ONE PIECE">
+                        <div class="manga-badge new">NEW</div>
+                    </div>
+                    <div class="manga-info">
+                        <h3 class="manga-title">ONE PIECE</h3>
+                        <p class="manga-chapter">Chapter 1137</p>
+                        <p class="manga-author">Eiichiro Oda</p>
+                    </div>
+                </div>
+                
+                <!-- Manga Item 2 -->
+                <div class="manga-item">
+                    <div class="manga-cover">
+                        <img src="https://via.placeholder.com/200x280/4a90e2/ffffff?text=JUJUTSU+KAISEN" alt="JUJUTSU KAISEN">
+                        <div class="manga-badge new">NEW</div>
+                    </div>
+                    <div class="manga-info">
+                        <h3 class="manga-title">JUJUTSU KAISEN</h3>
+                        <p class="manga-chapter">Chapter 276</p>
+                        <p class="manga-author">Gege Akutami</p>
+                    </div>
+                </div>
+                
+                <!-- Manga Item 3 -->
+                <div class="manga-item">
+                    <div class="manga-cover">
+                        <img src="https://via.placeholder.com/200x280/50c878/ffffff?text=MY+HERO+ACADEMIA" alt="MY HERO ACADEMIA">
+                        <div class="manga-badge updated">UPDATED</div>
+                    </div>
+                    <div class="manga-info">
+                        <h3 class="manga-title">MY HERO ACADEMIA</h3>
+                        <p class="manga-chapter">Chapter 431</p>
+                        <p class="manga-author">Kohei Horikoshi</p>
+                    </div>
+                </div>
+                
+                <!-- Manga Item 4 -->
+                <div class="manga-item">
+                    <div class="manga-cover">
+                        <img src="https://via.placeholder.com/200x280/f39c12/ffffff?text=CHAINSAW+MAN" alt="CHAINSAW MAN">
+                        <div class="manga-badge new">NEW</div>
+                    </div>
+                    <div class="manga-info">
+                        <h3 class="manga-title">CHAINSAW MAN</h3>
+                        <p class="manga-chapter">Chapter 189</p>
+                        <p class="manga-author">Tatsuki Fujimoto</p>
+                    </div>
+                </div>
+                
+                <!-- Manga Item 5 -->
+                <div class="manga-item">
+                    <div class="manga-cover">
+                        <img src="https://via.placeholder.com/200x280/e74c3c/ffffff?text=DEMON+SLAYER" alt="DEMON SLAYER">
+                        <div class="manga-badge completed">COMPLETED</div>
+                    </div>
+                    <div class="manga-info">
+                        <h3 class="manga-title">DEMON SLAYER</h3>
+                        <p class="manga-chapter">Chapter 205</p>
+                        <p class="manga-author">Koyoharu Gotouge</p>
+                    </div>
+                </div>
+                
+                <!-- Manga Item 6 -->
+                <div class="manga-item">
+                    <div class="manga-cover">
+                        <img src="https://via.placeholder.com/200x280/9b59b6/ffffff?text=SPY+FAMILY" alt="SPY x FAMILY">
+                        <div class="manga-badge new">NEW</div>
+                    </div>
+                    <div class="manga-info">
+                        <h3 class="manga-title">SPY x FAMILY</h3>
+                        <p class="manga-chapter">Chapter 108</p>
+                        <p class="manga-author">Tatsuya Endo</p>
+                    </div>
+                </div>
+                
+                <!-- Manga Item 7 -->
+                <div class="manga-item">
+                    <div class="manga-cover">
+                        <img src="https://via.placeholder.com/200x280/34495e/ffffff?text=KAIJU+NO.8" alt="KAIJU NO. 8">
+                        <div class="manga-badge updated">UPDATED</div>
+                    </div>
+                    <div class="manga-info">
+                        <h3 class="manga-title">KAIJU NO. 8</h3>
+                        <p class="manga-chapter">Chapter 120</p>
+                        <p class="manga-author">Naoya Matsumoto</p>
+                    </div>
+                </div>
+                
+                <!-- Manga Item 8 -->
+                <div class="manga-item">
+                    <div class="manga-cover">
+                        <img src="https://via.placeholder.com/200x280/ff69b4/ffffff?text=OSHI+NO+KO" alt="OSHI NO KO">
+                        <div class="manga-badge new">NEW</div>
+                    </div>
+                    <div class="manga-info">
+                        <h3 class="manga-title">【OSHI NO KO】</h3>
+                        <p class="manga-chapter">Chapter 169</p>
+                        <p class="manga-author">Aka Akasaka</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="load-more">
+                <button class="load-more-btn">Load More</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <img src="https://mangaplus.shueisha.co.jp/static/img/sp_logo.png" alt="MANGA Plus">
+                </div>
+                <div class="footer-links">
+                    <a href="#" class="footer-link">Terms of Service</a>
+                    <a href="#" class="footer-link">Privacy Policy</a>
+                    <a href="#" class="footer-link">Contact</a>
+                </div>
+                <div class="footer-social">
+                    <a href="#" class="social-link">Twitter</a>
+                    <a href="#" class="social-link">Facebook</a>
+                    <a href="#" class="social-link">Discord</a>
+                </div>
+            </div>
+            <div class="footer-copyright">
+                <p>&copy; SHUEISHA Inc. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
 </body>
 </html>
